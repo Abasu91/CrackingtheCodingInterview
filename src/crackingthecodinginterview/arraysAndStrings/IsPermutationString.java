@@ -10,6 +10,8 @@ import java.util.ArrayList;
 /**
  *
  * @author Arijit
+ * This Program checks whether two given strings are permutations of each other
+ * If true, we can find the possible number of permutations of the first string
  */
 public class IsPermutationString {
     public static boolean isPermutation(String s1, String s2){
@@ -19,7 +21,7 @@ public class IsPermutationString {
         return sort(s1).equals(sort(s2));
             
         }
-      
+     //Returns a sorted String 
      public static String sort(String content){
         char [] ch =content.toCharArray();
         java.util.Arrays.sort(ch);
@@ -52,7 +54,9 @@ public class IsPermutationString {
         for(String s:list){
             //for every string in thr previous arraylist
             for(int i=0;i<=s.length();i++){
+                //Append the String c in all possible positions
                 String sbuf = new StringBuffer(s).insert(i, c).toString();
+                //Push into the new arrayList
                 newlist.add(sbuf);
            }
         }
@@ -73,7 +77,7 @@ public class IsPermutationString {
         System.out.println("Enter the String2");
         String secondString = sc.nextLine();
         System.out.println("Strings are permutation of each other :"+isPermutation(parentString,secondString));
-        System.out.println("Possible Permutaions of Parent String are ");
+        System.out.println("Possible Permutations of Parent String are ");
         printList(NumberOfPerms(parentString));
        
     
