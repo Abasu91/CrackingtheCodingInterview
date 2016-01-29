@@ -23,8 +23,7 @@ public  class reverseString {
         System.out.println("Enter the String");
         java.util.Scanner sc = new java.util.Scanner(System.in);
         System.out.println(reverse(sc.nextLine()));
-        String word = new StringBuffer("1234").insert(0, "we").toString();
-        System.out.println(word);
+        
     }
     
 }
