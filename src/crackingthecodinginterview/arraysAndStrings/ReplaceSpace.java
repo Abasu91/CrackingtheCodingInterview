@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ReplaceSpace {
     
     
-    private String replaceSpace(String word){
+    private static String replaceSpace(String word){
         String sbuf = null;
         if(!word.contains(" ")){
             return "No space";
@@ -23,7 +23,7 @@ public class ReplaceSpace {
         else{
               for(int i=0;i<word.length();i++){
                   if(word.substring(i,i+1).equals(" ")){
-                     sbuf = word.replace(word.substring(i,i+1),"%20");
+                     sbuf = word.replace(word.substring(i,i+1),"%20%");
                       
                   }
                }
