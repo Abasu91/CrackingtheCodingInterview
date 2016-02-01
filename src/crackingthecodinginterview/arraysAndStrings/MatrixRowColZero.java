@@ -29,13 +29,9 @@ public class MatrixRowColZero {
             }
         }
         System.out.println("--------------------- ");
-
-        StringBuilder sb = new StringBuilder();
-        String lineSeparator = System.getProperty("line.separator");
         boolean flag = false;
 
         for (int[] row : tempMat) {
-            sb.append(Arrays.toString(row)).append(lineSeparator);
 
             if (Arrays.toString(row).contains("0")) {
                 flag = true;
