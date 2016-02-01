@@ -5,12 +5,14 @@
  */
 package crackingthecodinginterview.arraysAndStrings;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Arijit
  */
 public class MatrixRowColZero {
- 
+
     public static void main(String args[]) {
         java.util.Scanner sc = new java.util.Scanner(System.in);
         System.out.println("Enter row length");
@@ -28,44 +30,62 @@ public class MatrixRowColZero {
         }
         System.out.println("--------------------- ");
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (mat[i][j] == 0) {
-                    
-                    /*If, applicable
-                    sets elements present downwards in a column to zero wrt to the current element*/
-                    for (int k = i; k < rows; k++) {
-                        tempMat[k][j] = 0;
-                    }
-                    /*If, applicable
-                    sets elements present upwards in a column to zero wrt to the current element*/
-                    for (int l = 0; l <=i; l++) {
-                        tempMat[l][j] = 0;
-                    }
-                    /*If, applicable
-                    sets elements present rightwards in a rowt to zero wrt to the current element*/
-                    for (int k1 = i; k1 < cols; k1++) {
-                        tempMat[i][k1] = 0;
-                    }
-                    /*If, applicable
-                    sets elements present leftwards in a row to zero wrt to the current element*/
-                    for (int l1 = 0; l1 <= j; l1++) {
-                        tempMat[i][l1] = 0;
+        StringBuilder sb = new StringBuilder();
+        String lineSeparator = System.getProperty("line.separator");
+        boolean flag = false;
+
+        for (int[] row : tempMat) {
+            sb.append(Arrays.toString(row)).append(lineSeparator);
+
+            if (Arrays.toString(row).contains("0")) {
+                flag = true;
+            }
+        }
+
+        if (flag == true) {
+        //Matrix contains elements/element which are/is zero
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    if (mat[i][j] == 0) {
+
+                        /*If, applicable
+                         sets elements present downwards in a column to zero wrt to the current element*/
+                        for (int k = i; k < rows; k++) {
+                            tempMat[k][j] = 0;
+                        }
+                        /*If, applicable
+                         sets elements present upwards in a column to zero wrt to the current element*/
+                        for (int l = 0; l <= i; l++) {
+                            tempMat[l][j] = 0;
+                        }
+                        /*If, applicable
+                         sets elements present rightwards in a rowt to zero wrt to the current element*/
+                        for (int k1 = i; k1 < cols; k1++) {
+                            tempMat[i][k1] = 0;
+                        }
+                        /*If, applicable
+                         sets elements present leftwards in a row to zero wrt to the current element*/
+                        for (int l1 = 0; l1 <= j; l1++) {
+                            tempMat[i][l1] = 0;
+                        }
+
                     }
 
                 }
 
             }
 
-        }
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-
-                System.out.println(tempMat[i][j]);
-                System.out.println(" ");
+                    System.out.println(tempMat[i][j]);
+                    System.out.println(" ");
+                }
+                System.out.println("\n");
             }
-            System.out.println("\n");
+
+        } else {
+            System.out.println("Matrix has no non-zero elements");
         }
 
     }
