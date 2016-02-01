@@ -35,6 +35,7 @@ public class MatrixRowColZero {
 
             if (Arrays.toString(row).contains("0")) {
                 flag = true;
+                break;
             }
         }
 
