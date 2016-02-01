@@ -33,22 +33,22 @@ public class MatrixRowColZero {
                 if (mat[i][j] == 0) {
                     
                     /*If, applicable
-                    sets elements present downwards in a column wrt to the current element*/
+                    sets elements present downwards in a column to zero wrt to the current element*/
                     for (int k = i; k < rows; k++) {
                         tempMat[k][j] = 0;
                     }
                     /*If, applicable
-                    sets elements present upwards in a column wrt to the current element*/
+                    sets elements present upwards in a column to zero wrt to the current element*/
                     for (int l = 0; l <=i; l++) {
                         tempMat[l][j] = 0;
                     }
                     /*If, applicable
-                    sets elements present rightwards in a row wrt to the current element*/
+                    sets elements present rightwards in a rowt to zero wrt to the current element*/
                     for (int k1 = i; k1 < cols; k1++) {
                         tempMat[i][k1] = 0;
                     }
                     /*If, applicable
-                    sets elements present leftwards in a row wrt to the current element*/
+                    sets elements present leftwards in a row to zero wrt to the current element*/
                     for (int l1 = 0; l1 <= j; l1++) {
                         tempMat[i][l1] = 0;
                     }
