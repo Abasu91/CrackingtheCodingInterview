@@ -87,6 +87,7 @@ public class MyLinkedList implements NodeList {
                 if(currentItem == this.root){
                     this.root = currentItem.next();
                 }
+                //Item Found
                 else{
                     currentItem.previous().setNext(currentItem.next());
                     if(currentItem.next()!=null){
@@ -96,9 +97,11 @@ public class MyLinkedList implements NodeList {
                 return true;
                 
             }
+            // Item is not reached, move right
             else if(comparison<0){
                 currentItem = currentItem.next();
             }
+            //Item is not in the list
             else{
                 return false;
             }
